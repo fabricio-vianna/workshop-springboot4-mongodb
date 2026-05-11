@@ -3,9 +3,9 @@ package com.nelioalves.workshopmongo.domain;
 import java.io.Serial;
 import java.io.Serializable;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.Objects;
 
+import com.nelioalves.workshopmongo.dto.AuthorDTO;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -20,12 +20,12 @@ public class Post implements Serializable {
     private LocalDate date;
     private String title;
     private String body;
-    private User author;
+    private AuthorDTO author;
 
     public Post() {
     }
 
-    public Post(String id, LocalDate date, String title, String body, User author) {
+    public Post(String id, LocalDate date, String title, String body, AuthorDTO author) {
         this.id = id;
         this.date = date;
         this.title = title;
@@ -65,11 +65,11 @@ public class Post implements Serializable {
         this.body = body;
     }
 
-    public User getAuthor() {
+    public AuthorDTO getAuthor() {
         return author;
     }
 
-    public void setAuthor(User Author) {
+    public void setAuthor(AuthorDTO Author) {
         this.author = author;
     }
 
